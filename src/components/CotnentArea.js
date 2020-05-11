@@ -1,11 +1,15 @@
 import React from "react";
 import FrontWorks from "./FrontWorks";
+import PublishWorks from "./PublishWorks";
+import Contact from "./Contact";
 
 const CotnentArea = () => {
     return (
-        <div className="content">
+        <main className="content">
             <FrontWorks />
-        </div>
+            <PublishWorks />
+            <Contact />
+        </main>
     );
 };
 

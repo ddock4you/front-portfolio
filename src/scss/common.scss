@@ -10,3 +10,11 @@ body {
     width: 1720px;
     margin: 0 auto;
 }
+
+.hide {
+    width: 1px;
+    height: 1px;
+    line-height: 0;
+    font-size: 0;
+    text-indent: -9999px;
+}
