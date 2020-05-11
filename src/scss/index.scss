@@ -1,0 +1,103 @@
+@import "_variable";
+@import "_mixin";
+
+header {
+    height: 100px;
+    background-color: #444;
+    .inner1720 {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    h1 {
+        flex: none;
+        align-items: center;
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 2.4;
+        letter-spacing: 2.5px;
+        color: $green;
+        vertical-align: middle;
+        img {
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+    }
+    nav {
+        &.nav-center {
+            @include center-content;
+            margin: 0 auto;
+            flex: 1 1;
+            justify-content: center;
+            ul {
+                li {
+                    margin: 0 20px;
+                    a {
+                        display: inline-block;
+                        padding: 10px;
+                        font-family: Roboto;
+                        font-size: 18px;
+                        font-weight: bold;
+                        letter-spacing: 1.08px;
+                        color: $white;
+                        &:hover {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+        &.nav-right {
+            flex: none;
+            margin-left: auto;
+            ul {
+                li {
+                    a {
+                        img {
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+        ul {
+            display: flex;
+            li {
+                &:first-child {
+                    margin-right: 15px;
+                }
+                a {
+                    display: inline-block;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 1.12px;
+                    color: #ffffff;
+                    img {
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    background-color: $white;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 85px;
+    background-color: $black;
+    span {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.8px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
