@@ -2,6 +2,8 @@
 @import "_mixin";
 
 header {
+    position: fixed;
+    width: 100%;
     height: 100px;
     background-color: #444;
     .inner1720 {
@@ -83,7 +85,35 @@ header {
 }
 
 .content {
-    background-color: $white;
+    padding-top: 100px;
+}
+
+.front-works {
+    .front-works-top {
+        height: 700px;
+        &--image {
+            position: relative;
+            float: left;
+            width: calc(100% - 100px);
+            height: 100%;
+            // padding-bottom: 100%;
+            img {
+                width: 100%;
+                @include center-content;
+            }
+        }
+        &--email {
+            float: right;
+            width: 100px;
+            height: 100%;
+            p {
+                transform: rotate(90deg);
+                font-family: Roboto;
+                font-weight: 500;
+                color: $white;
+            }
+        }
+    }
 }
 
 footer {
