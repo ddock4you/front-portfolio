@@ -269,6 +269,142 @@ header {
     }
 }
 
+.publish-works {
+    margin-bottom: 100px;
+    .publish-list {
+        &-sort {
+            position: relative;
+            &--btn {
+                display: none;
+                // display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                width: 250px;
+                height: 60px;
+                padding: 5px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                cursor: pointer;
+                .icon {
+                    position: relative;
+                    width: 65px;
+                    height: 100%;
+                    margin-right: 20px;
+                    img {
+                        @include center-content;
+                        max-height: 100%;
+                    }
+                }
+                > div {
+                    font-weight: 300;
+                    letter-spacing: 0.8px;
+                    > p:first-child {
+                        margin-bottom: 15px;
+                    }
+                }
+                > span {
+                    margin: 0 5px 0 auto;
+                }
+            }
+            ul {
+                @include clearfix;
+                margin-bottom: 100px;
+                li {
+                    display: flex;
+                    align-items: center;
+                    float: left;
+                    box-sizing: border-box;
+                    height: 60px;
+                    padding: 0 32px;
+                    border-left: 1px solid rgba(255, 255, 255, 0.05);
+                    cursor: pointer;
+                    &:first-child {
+                        padding-left: 0;
+                        border-left: none;
+                    }
+                    .icon {
+                        position: relative;
+                        width: 65px;
+                        height: 100%;
+                        margin-right: 20px;
+                        img {
+                            @include center-content;
+                            max-height: 100%;
+                            &:first-child {
+                                display: none;
+                            }
+                        }
+                    }
+                    > div {
+                        opacity: 0.2;
+                        font-weight: 300;
+                        letter-spacing: 0.8px;
+                        color: $white;
+                        > p:first-child {
+                            margin-bottom: 15px;
+                        }
+                    }
+                    &.selected {
+                        > div {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        &-view {
+            @include clearfix;
+            li {
+                float: left;
+                width: 30.6666%;
+                margin: 0 4% 90px 0;
+                cursor: pointer;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                .publish-list-view--logo {
+                    position: relative;
+                    margin-bottom: 35px;
+                    padding-bottom: 70%;
+                    background-color: $white;
+                    img {
+                        @include center-content;
+                        max-width: 100%;
+                    }
+                }
+                dl {
+                    dt {
+                        margin-bottom: 25px;
+                        font-size: 19px;
+                        color: $white;
+                    }
+                    dd {
+                        min-height: 50px;
+                        font-size: 15px;
+                        color: $white;
+                    }
+                }
+                .publish-list-view--category {
+                    span {
+                        display: inline-block;
+                        margin-right: 10px;
+                        padding: 12px 15px;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: $white;
+                        &:span {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .active-button {
+            margin: 0 auto;
+        }
+    }
+}
+
 footer {
     display: flex;
     align-items: center;
