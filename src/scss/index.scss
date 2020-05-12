@@ -19,6 +19,7 @@ header {
     h1 {
         flex: none;
         align-items: center;
+        font-family: "Quicksand";
         font-size: 25px;
         font-weight: 300;
         line-height: 2.4;
@@ -468,7 +469,9 @@ header {
                 padding: 5px;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 cursor: pointer;
-                @include mediaQuery($pc-l) {
+                @include mediaQuery($pc-s) {
+                    display: flex;
+                    margin-bottom: 70px;
                 }
                 .icon {
                     position: relative;
@@ -492,8 +495,15 @@ header {
                 }
             }
             ul {
-                @include clearfix;
                 margin-bottom: 100px;
+                @include clearfix;
+                @include mediaQuery($pc-s) {
+                    display: none;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    z-index: 1;
+                }
                 li {
                     display: flex;
                     align-items: center;
@@ -505,6 +515,13 @@ header {
                     cursor: pointer;
                     @include mediaQuery($pc-m) {
                         padding: 0 20px;
+                    }
+                    @include mediaQuery($pc-s) {
+                        float: none;
+                        width: 250px;
+                        padding: 5px;
+                        background-color: $deepBlack;
+                        border: 1px solid rgba(255, 255, 255, 0.05);
                     }
                     &:first-child {
                         padding-left: 0;
@@ -544,11 +561,25 @@ header {
             @include clearfix;
             li {
                 float: left;
-                width: 30.6666%;
-                margin: 0 4% 90px 0;
+                width: 32%;
+                margin: 0 2% 90px 0;
                 cursor: pointer;
+                @include mediaQuery($tablet-m) {
+                    width: 49%;
+                    margin: 0 2% 60px 0;
+                    &:nth-child(even) {
+                        margin-right: 0;
+                    }
+                }
                 &:nth-child(3n) {
                     margin-right: 0;
+                    @include mediaQuery($tablet-m) {
+                        margin-right: 2%;
+                    }
+                }
+                @include mediaQuery($tablet-s) {
+                    width: 100%;
+                    margin: 0 0 50px 0;
                 }
                 .publish-list-view--logo {
                     position: relative;
@@ -606,6 +637,10 @@ header {
             > div {
                 width: 175px;
                 margin-right: 35px;
+                @include mediaQuery($pc-s) {
+                    width: 120px;
+                    margin-right: 25px;
+                }
                 > p {
                     position: relative;
                     box-sizing: border-box;

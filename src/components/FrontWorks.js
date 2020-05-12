@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ActiveButton from "./ActiveButton";
 
+// const sortList = [
+//     {
+
+//     }
+// ]
+
 const FrontWorks = () => {
     const [windowWidth, setWindowWidth] = useState(window.screen.width);
+    const [clickSort, isClickSort] = useState(false);
 
     useEffect(() => {
         window.addEventListener("resize", function () {
