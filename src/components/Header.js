@@ -6,7 +6,7 @@ const Header = ({ menu, setMenu }) => {
             <div className="inner1720">
                 <h1 className="logo">
                     <img src="/images/icon_logo.png" alt="로고" />
-                    Seung-Hyun Y
+                    Seung-Hyun.Y
                 </h1>
                 <button
                     className={`nav-button ${menu ? "active" : ""}`}
