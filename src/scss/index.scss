@@ -26,58 +26,66 @@ header {
             vertical-align: middle;
         }
     }
-    nav {
-        &.nav-center {
-            @include center-content;
-            margin: 0 auto;
-            flex: 1 1;
-            justify-content: center;
+    .nav-button {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .nav {
+        display: flex;
+        width: 100%;
+        nav {
+            &.nav-center {
+                @include center-content;
+                margin: 0 auto;
+                flex: 1 1;
+                justify-content: center;
+                ul {
+                    li {
+                        margin: 0 20px;
+                        a {
+                            display: inline-block;
+                            padding: 10px;
+                            font-size: 18px;
+                            font-weight: bold;
+                            letter-spacing: 1.08px;
+                            color: $white;
+                            &:hover {
+                                color: $green;
+                            }
+                        }
+                    }
+                }
+            }
+            &.nav-right {
+                flex: none;
+                margin-left: auto;
+                ul {
+                    li {
+                        a {
+                            img {
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
             ul {
+                display: flex;
                 li {
-                    margin: 0 20px;
+                    &:first-child {
+                        margin-right: 15px;
+                    }
                     a {
                         display: inline-block;
-                        padding: 10px;
-                        font-family: Roboto;
-                        font-size: 18px;
+                        font-size: 14px;
                         font-weight: bold;
-                        letter-spacing: 1.08px;
-                        color: $white;
-                        &:hover {
-                            color: $green;
-                        }
-                    }
-                }
-            }
-        }
-        &.nav-right {
-            flex: none;
-            margin-left: auto;
-            ul {
-                li {
-                    a {
+                        letter-spacing: 1.12px;
+                        color: #ffffff;
                         img {
-                            vertical-align: middle;
+                            padding-right: 5px;
                         }
-                    }
-                }
-            }
-        }
-        ul {
-            display: flex;
-            li {
-                &:first-child {
-                    margin-right: 15px;
-                }
-                a {
-                    display: inline-block;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    font-weight: bold;
-                    letter-spacing: 1.12px;
-                    color: #ffffff;
-                    img {
-                        padding-right: 5px;
                     }
                 }
             }
@@ -90,6 +98,8 @@ header {
 }
 
 .front-works {
+    @include clearfix;
+    margin-bottom: 100px;
     .front-works-top {
         height: 700px;
         margin-bottom: 100px;
@@ -115,12 +125,144 @@ header {
                 transform: translate(-50%, -50%) rotate(90deg);
                 white-space: nowrap;
                 text-align: center;
-                font-family: Roboto;
                 font-weight: 500;
                 color: $white;
                 img {
                     transform: rotate(-90deg);
                     margin-right: 10px;
+                }
+            }
+        }
+    }
+    .front-content {
+        &--left {
+            width: 45%;
+            float: left;
+            .front-content-head {
+                margin-bottom: 35px;
+                text-transform: uppercase;
+                p {
+                    margin-bottom: 20px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    letter-spacing: 1.7px;
+                    color: $green;
+                }
+                strong {
+                    margin-bottom: 35px;
+                    font-size: 30px;
+                    font-weight: 500;
+                    letter-spacing: 1.5px;
+                    color: $white;
+                    img {
+                        margin-right: 10px;
+                        vertical-align: -2px;
+                    }
+                }
+            }
+            .front-content-key-explain {
+                margin-bottom: 40px;
+                > li {
+                    position: relative;
+                    margin-bottom: 20px;
+                    padding-left: 15px;
+                    font-size: 17px;
+                    font-weight: 300;
+                    &::before {
+                        content: "-";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        color: $white;
+                    }
+                    > ul {
+                        padding-top: 20px;
+                        li {
+                            opacity: 0.7;
+                            margin-bottom: 12px;
+                            font-weight: 300;
+                            span {
+                                display: inline-block;
+                                box-sizing: border-box;
+                                width: 100px;
+                                padding: 8px 5px;
+                                margin-right: 10px;
+                                border: 1px solid rgba(255, 255, 255, 0.3);
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &--right {
+            width: 55%;
+            float: left;
+            .circle-list {
+                margin-bottom: 50px;
+                @include clearfix;
+                li {
+                    float: left;
+                    width: 25%;
+                    > div {
+                        position: relative;
+                        box-sizing: border-box;
+                        padding-bottom: 100%;
+                        border: 1px solid rgba(255, 255, 255, 0.7);
+                        border-radius: 50%;
+                        img {
+                            position: absolute;
+                            top: 50px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        > p {
+                            position: absolute;
+                            top: 120px;
+                            left: 0;
+                            width: 100%;
+                            font-weight: 300;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            .desc-list {
+                li {
+                    position: relative;
+                    padding-left: 45px;
+                    margin-bottom: 35px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    h5 {
+                        margin-bottom: 18px;
+                        font-family: "Spoqa Han Sans";
+                        font-size: 18px;
+                        color: $green;
+                        span {
+                            position: absolute;
+                            top: -5px;
+                            left: 0;
+                            width: 30px;
+                            height: 30px;
+                            background-color: $green;
+                            border-radius: 50%;
+                            line-height: 30px;
+                            font-family: "Roboto";
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: $white;
+                            text-align: center;
+                        }
+                    }
+                    > p {
+                        font-weight: 300;
+                        line-height: 1.8;
+                    }
                 }
             }
         }
@@ -135,7 +277,6 @@ footer {
     height: 85px;
     background-color: $black;
     span {
-        font-family: Roboto;
         font-size: 16px;
         font-weight: 300;
         letter-spacing: 0.8px;

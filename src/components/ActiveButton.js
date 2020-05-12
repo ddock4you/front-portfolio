@@ -8,8 +8,10 @@ const ActiveButton = ({ icon, ko, en }) => {
                 src={`/images/icon_${icon}.png`}
                 alt={`${ko} 아이콘`}
             />
-            <span className="active-button__en">{en}</span>
-            <span className="active-button__ko">{ko}</span>
+            <span className="active-button--text">
+                <i className="active-button--text__en">{en}</i>
+                <i className="active-button--text__ko">{ko}</i>
+            </span>
             <img
                 className="active-button__arrow"
                 src="/images/icon_right_arrow.png"
