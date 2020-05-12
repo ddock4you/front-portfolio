@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ActiveButton from "./ActiveButton";
 
 const FrontWorks = () => {
+    const [windowWidth, setWindowWidth] = useState(window.screen.width);
+
+    useEffect(() => {
+        window.addEventListener("resize", function () {
+            setWindowWidth(window.screen.width);
+        });
+    }, [windowWidth]);
+
     return (
         <section className="front-works">
             <h2 className="hide">Front-end</h2>
@@ -9,7 +17,9 @@ const FrontWorks = () => {
                 <h3 className="hide">front-end works image</h3>
                 <div className="front-works-top--image">
                     <img
-                        src="/images/image_front_portfolio.jpg"
+                        src={`/images/image_front_portfolio${
+                            windowWidth < 1025 ? "_mobile" : ""
+                        }.jpg`}
                         alt="youtube-music-player 이미지"
                     />
                 </div>
@@ -49,7 +59,7 @@ const FrontWorks = () => {
                                     </li>
                                     <li>
                                         <span>npm start</span>기본접속주소는
-                                        http://localhost:3001입니다.
+                                        http://localhost:3001 입니다.
                                     </li>
                                 </ul>
                             </li>

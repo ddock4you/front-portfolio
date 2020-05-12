@@ -1,20 +1,38 @@
 @import "_variable";
+@import "_mixin";
 
 body {
-    background-color: $mainColor;
+    background-color: $black;
     font-family: "Spoqa Han Sans", "Sans-serif";
+}
+
+.wrap {
+    &.active {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 .inner1720 {
     position: relative;
+    box-sizing: border-box;
     width: 1720px;
     margin: 0 auto;
+    @include mediaQuery($pc-l) {
+        width: 100%;
+        padding: 0 10px;
+    }
 }
 
 .inner1300 {
     position: relative;
+    box-sizing: border-box;
     width: 1300px;
     margin: 0 auto;
+    @include mediaQuery($pc-m) {
+        width: 100%;
+        padding: 0 10px;
+    }
 }
 
 .hide {
@@ -36,6 +54,20 @@ body {
     letter-spacing: 7.5px;
     text-align: left;
     color: $white;
+    @include mediaQuery($pc-l) {
+        font-size: 100px;
+    }
+    @include mediaQuery($tablet-l) {
+        font-size: 85px;
+    }
+    @include mediaQuery($tablet-m) {
+        text-align: center;
+        font-size: 60px;
+    }
+    @include mediaQuery($mobile-m) {
+        text-align: center;
+        font-size: 48px;
+    }
 }
 
 .active-button {
@@ -47,6 +79,9 @@ body {
     padding: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     cursor: pointer;
+    @include mediaQuery($tablet-s) {
+        width: 90%;
+    }
     &--text {
         opacity: 0.7;
         color: $white;

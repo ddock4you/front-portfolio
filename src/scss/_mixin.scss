@@ -1,8 +1,17 @@
+@import "_variable";
+
 @mixin center-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@mixin center-content-disable {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 @mixin clearfix {
@@ -17,4 +26,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+@mixin mediaQuery($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
 }

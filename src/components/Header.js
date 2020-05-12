@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Header = () => {
+const Header = ({ menu, setMenu }) => {
     return (
         <header>
             <div className="inner1720">
@@ -8,12 +8,17 @@ const Header = () => {
                     <img src="/images/icon_logo.png" alt="로고" />
                     Seung-Hyun Y
                 </h1>
-                <button className="nav-button hide">
+                <button
+                    className={`nav-button ${menu ? "active" : ""}`}
+                    onClick={() => {
+                        setMenu(!menu);
+                    }}
+                >
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <div className="nav">
+                <div className={`nav ${menu ? "active" : ""}`}>
                     <nav className="nav-center">
                         <h2 className="hide">navigation-center</h2>
                         <ul>
