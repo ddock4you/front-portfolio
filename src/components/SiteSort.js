@@ -1,103 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SiteSort = () => {
+const SiteSort = ({ sortList, acceptSort, toggle, setToggle }) => {
+    const [showEN, setShowEN] = useState(sortList[0].en);
+    const [showKO, setShowKO] = useState(sortList[0].ko);
+    const [showCategory, setShowCategory] = useState(sortList[0].category);
+
     return (
         <div className="publish-list-sort">
-            <div className="publish-list-sort--btn">
+            <div
+                className="publish-list-sort--btn"
+                onClick={() => {
+                    setToggle(!toggle);
+                }}
+            >
                 <p className="icon">
                     <img
-                        src="/images/btn_sort_publish_all_on.png"
-                        alt="모든 프로젝트"
+                        src={`/images/btn_sort_publish_${showCategory}_on.png`}
+                        alt={`# ${showKO}`}
                     />
                 </p>
                 <div>
-                    <p className="en"># All Project</p>
-                    <p className="ko"># 모든 프로젝트</p>
+                    <p className="en">{`# ${showEN}`}</p>
+                    <p className="ko">{`# ${showKO}`}</p>
                 </div>
-                <span>▼</span>
+                <span>{toggle ? "▲" : "▼"}</span>
             </div>
-            <ul>
-                <li data-category="all" className="selected">
-                    <p className="icon">
-                        <img
-                            src="/images/btn_sort_publish_all_on.png"
-                            alt="모든 프로젝트"
-                        />
-                        <img
-                            src="/images/btn_sort_publish_all.png"
-                            alt="모든 프로젝트"
-                        />
-                    </p>
+            <ul className={toggle ? "on-list" : ""}>
+                {sortList.map((sort, i) => {
+                    return (
+                        <li
+                            className={sort.selected ? "selected" : ""}
+                            key={i}
+                            onClick={() => {
+                                acceptSort(sort.category, i);
+                                setShowCategory(sort.category);
+                                setShowKO(sort.ko);
+                                setShowEN(sort.en);
+                            }}
+                        >
+                            <p className="icon">
+                                <img
+                                    src={`/images/btn_sort_publish_${
+                                        sort.selected
+                                            ? `${sort.category}_on`
+                                            : sort.category
+                                    }.png`}
+                                    alt={sort.ko}
+                                />
+                            </p>
 
-                    <div>
-                        <p className="en"># All Project</p>
-                        <p className="ko"># 모든 프로젝트</p>
-                    </div>
-                </li>
-                <li data-category="responsive">
-                    <p className="icon">
-                        <img
-                            src="/images/btn_sort_publish_responsive_on.png"
-                            alt="반응형 홈페이지"
-                        />
-                        <img
-                            src="/images/btn_sort_publish_responsive.png"
-                            alt="반응형 홈페이지"
-                        />
-                    </p>
-                    <div>
-                        <p className="en"># Responsive</p>
-                        <p className="ko"># 반응형 홈페이지</p>
-                    </div>
-                </li>
-                <li data-category="pc">
-                    <p className="icon">
-                        <img
-                            src="/images/btn_sort_publish_pc_on.png"
-                            alt="적응형 웹 (PC)"
-                        />
-                        <img
-                            src="/images/btn_sort_publish_pc.png"
-                            alt="적응형 웹 (PC)"
-                        />
-                    </p>
-                    <div>
-                        <p className="en"># Adaptive (PC)</p>
-                        <p className="ko"># 적응형 웹 (PC)</p>
-                    </div>
-                </li>
-                <li data-category="mobile">
-                    <p className="icon">
-                        <img
-                            src="/images/btn_sort_publish_mobile_on.png"
-                            alt="적응형 웹(모바일)"
-                        />
-                        <img
-                            src="/images/btn_sort_publish_mobile.png"
-                            alt="적응형 웹(모바일)"
-                        />
-                    </p>
-                    <div>
-                        <p className="en"># Adaptive (MB)</p>
-                        <p className="ko"># 적응형 웹 (모바일)</p>
-                    </div>
-                </li>
-                <li data-category="higher">
-                    <p className="icon">
-                        <img
-                            src="/images/btn_sort_publish_higher_on.png"
-                            alt="고도화"
-                        />
-                        <img
-                            src="/images/btn_sort_publish_higher.png"
-                            alt="고도화"
-                        />
-                    </p>
-                    <div>
-                        <p className="en"># Higher</p>
-                        <p className="ko"># 고도화</p>
-                    </div>
-                </li>
+                            <div>
+                                <p className="en">{`# ${sort.en}`}</p>
+                                <p className="ko">{`# ${sort.ko}`}</p>
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );

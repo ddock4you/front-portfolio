@@ -1,11 +1,10 @@
 import React from "react";
 import PublishItem from "./PublishItem";
-import { site } from "../data/site";
 
-const PublishList = () => {
+const PublishList = ({ siteList }) => {
     return (
         <ul className="publish-list-view">
-            <PublishItem site={site} />
+            <PublishItem siteList={siteList} />
         </ul>
     );
 };

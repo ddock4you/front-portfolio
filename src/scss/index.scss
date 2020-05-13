@@ -225,7 +225,7 @@ header {
             @include mediaQuery($tablet-l) {
                 width: 50px;
             }
-            span {
+            a {
                 display: inline-block;
                 @include center-content;
                 transform: translate(-50%, -50%) rotate(90deg);
@@ -239,6 +239,9 @@ header {
                 img {
                     transform: rotate(-90deg);
                     margin-right: 10px;
+                }
+                span {
+                    vertical-align: 4px;
                 }
             }
         }
@@ -454,12 +457,12 @@ header {
             position: relative;
             &--btn {
                 display: none;
-                // display: flex;
                 align-items: center;
                 box-sizing: border-box;
-                width: 250px;
-                height: 60px;
-                padding: 5px;
+                width: 270px;
+                height: 70px;
+                margin-left: auto;
+                padding: 10px;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 cursor: pointer;
                 @include mediaQuery($pc-s) {
@@ -468,7 +471,7 @@ header {
                 }
                 .icon {
                     position: relative;
-                    width: 65px;
+                    width: 50px;
                     height: 100%;
                     margin-right: 20px;
                     img {
@@ -491,11 +494,14 @@ header {
                 margin-bottom: 100px;
                 @include clearfix;
                 @include mediaQuery($pc-s) {
-                    // display: none;
+                    display: none;
                     position: absolute;
-                    top: 60px;
-                    left: 0;
+                    top: 70px;
+                    right: 0;
                     z-index: 1;
+                    &.on-list {
+                        display: block;
+                    }
                 }
                 li {
                     display: flex;
@@ -507,12 +513,13 @@ header {
                     border-left: 1px solid rgba(255, 255, 255, 0.05);
                     cursor: pointer;
                     @include mediaQuery($pc-m) {
-                        padding: 0 20px;
+                        padding: 0 18px;
                     }
                     @include mediaQuery($pc-s) {
                         float: none;
-                        width: 250px;
-                        padding: 5px;
+                        width: 270px;
+                        height: 70px;
+                        padding: 10px;
                         background-color: $deepBlack;
                         border: 1px solid rgba(255, 255, 255, 0.05);
                     }
@@ -528,12 +535,12 @@ header {
                         width: 65px;
                         height: 100%;
                         margin-right: 20px;
+                        @include mediaQuery($pc-s) {
+                            width: 50px;
+                        }
                         img {
                             @include center-content;
                             max-height: 100%;
-                            &:first-child {
-                                display: none;
-                            }
                         }
                     }
                     > div {
@@ -563,7 +570,7 @@ header {
                 width: 32%;
                 margin: 0 2% 90px 0;
                 cursor: pointer;
-                @include mediaQuery($tablet-m) {
+                @include mediaQuery($tablet-l) {
                     width: 49%;
                     margin: 0 2% 60px 0;
                     &:nth-child(even) {
@@ -572,8 +579,11 @@ header {
                 }
                 &:nth-child(3n) {
                     margin-right: 0;
-                    @include mediaQuery($tablet-m) {
+                    @include mediaQuery($tablet-l) {
                         margin-right: 2%;
+                        &:nth-child(even) {
+                            margin-right: 0;
+                        }
                     }
                 }
                 @include mediaQuery($tablet-s) {
@@ -587,16 +597,19 @@ header {
                     background-color: $deepGray;
                     img {
                         @include center-content;
-                        max-width: 100%;
+                        max-width: 80%;
+                        max-height: 70%;
                     }
                 }
                 dl {
                     dt {
                         margin-bottom: 25px;
+                        line-height: 1.4;
                         font-size: 19px;
                         color: $white;
                     }
                     dd {
+                        line-height: 1.4;
                         min-height: 50px;
                         font-size: 15px;
                         color: $white;
@@ -625,7 +638,6 @@ header {
 }
 
 .contact-content {
-    font-family: "Roboto";
     ul {
         @include clearfix;
         margin-bottom: 100px;
@@ -633,9 +645,10 @@ header {
             display: flex;
             align-items: center;
             float: left;
-            width: 520px;
+            width: 50%;
             @include mediaQuery($tablet-l) {
                 float: none;
+                width: 520px;
                 margin: 0 auto;
             }
             @include mediaQuery($tablet-s) {

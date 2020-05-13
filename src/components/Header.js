@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Header = ({ menu, setMenu }) => {
+    useEffect(() => {
+        const navCenterBtn = document.querySelectorAll("nav ul li a");
+        navCenterBtn.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                setMenu(!menu);
+            });
+        });
+    });
+
     return (
         <header>
             <div className="inner1720">
@@ -37,21 +46,29 @@ const Header = ({ menu, setMenu }) => {
                         <h2 className="hide">navigation-right</h2>
                         <ul>
                             <li>
-                                <a href="#;">
+                                <a
+                                    href="https://ddock4you.netlify.app/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <img
                                         src="/images/icon_blog.png"
                                         alt="blog"
                                     />
-                                    blog
+                                    Blog
                                 </a>
                             </li>
                             <li>
-                                <a href="#;">
+                                <a
+                                    href="https://github.com/ddock4you"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <img
                                         src="/images/icon_github.png"
                                         alt="github"
                                     />
-                                    github
+                                    Github
                                 </a>
                             </li>
                         </ul>
