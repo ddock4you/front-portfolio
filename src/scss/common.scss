@@ -3,7 +3,6 @@
 
 body {
     background-color: $black;
-    font-family: "Spoqa Han Sans", "Sans-serif";
 }
 
 .wrap {
@@ -20,7 +19,7 @@ body {
     margin: 0 auto;
     @include mediaQuery($pc-l) {
         width: 100%;
-        padding: 0 10px;
+        padding: 0 15px;
     }
 }
 
@@ -31,7 +30,7 @@ body {
     margin: 0 auto;
     @include mediaQuery($pc-m) {
         width: 100%;
-        padding: 0 10px;
+        padding: 0 15px;
     }
 }
 
@@ -56,7 +55,7 @@ body {
         font-size: 100px;
     }
     @include mediaQuery($tablet-l) {
-        font-size: 85px;
+        font-size: 82px;
     }
     @include mediaQuery($tablet-m) {
         text-align: center;
@@ -71,18 +70,22 @@ body {
 .active-button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     box-sizing: border-box;
     width: 350px;
     padding: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    @include mediaQuery($tablet-s) {
-        width: 90%;
+    @include mediaQuery($mobile-m) {
+        width: 100%;
+    }
+    &__icon {
+        margin-right: 12px;
     }
     &--text {
         opacity: 0.7;
         color: $white;
+        margin-top: 2px;
         &__en {
             padding-right: 15px;
             font-size: 19px;
@@ -91,5 +94,8 @@ body {
         &__ko {
             font-weight: 300;
         }
+    }
+    &__arrow {
+        margin-left: auto;
     }
 }

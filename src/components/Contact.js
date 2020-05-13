@@ -39,7 +39,11 @@ const Contact = () => {
                             <dl>
                                 <dt>Social-Network Service</dt>
                                 <dd>
-                                    <a href=";">
+                                    <a
+                                        href="https://github.com/ddock4you"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <strong>
                                             <img
                                                 src="/images/icon_github.png"
@@ -47,11 +51,17 @@ const Contact = () => {
                                             />{" "}
                                             Github.
                                         </strong>
-                                        https://github.com/ddock4you
+                                        <span>
+                                            https://github.com/ddock4you
+                                        </span>
                                     </a>
                                 </dd>
                                 <dd>
-                                    <a href=";">
+                                    <a
+                                        href="https://ddock4you.netlify.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <strong>
                                             <img
                                                 src="/images/icon_blog.png"
@@ -59,7 +69,9 @@ const Contact = () => {
                                             />{" "}
                                             Blog.
                                         </strong>
-                                        https://github.com/ddock4you
+                                        <span>
+                                            https://ddock4you.netlify.app
+                                        </span>
                                     </a>
                                 </dd>
                             </dl>
