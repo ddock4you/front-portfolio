@@ -43,7 +43,7 @@ const SiteSort = ({ sortList, acceptSort, toggle, setToggle }) => {
                                     src={`/images/btn_sort_publish_${
                                         sort.selected
                                             ? `${sort.category.toLowerCase()}_on`
-                                            : sort.category
+                                            : sort.category.toLowerCase()
                                     }.png`}
                                     alt={sort.ko}
                                 />
