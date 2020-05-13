@@ -5,7 +5,7 @@ const Header = ({ menu, setMenu }) => {
         const navCenterBtn = document.querySelectorAll("nav ul li a");
         navCenterBtn.forEach((btn) => {
             btn.addEventListener("click", () => {
-                setMenu(!menu);
+                setMenu(false);
             });
         });
     });
