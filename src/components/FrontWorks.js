@@ -31,9 +31,9 @@ const FrontWorks = () => {
                     >
                         <img
                             src="/images/icon_github.png"
-                            alt="E-Mail. ddock4you@gmail.com"
+                            alt="Repository Link"
                         />
-                        <span>Youtube-Music-Player Repository Link</span>
+                        <span>Repository Link</span>
                     </a>
                 </div>
             </article>
