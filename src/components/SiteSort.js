@@ -15,7 +15,7 @@ const SiteSort = ({ sortList, acceptSort, toggle, setToggle }) => {
             >
                 <p className="icon">
                     <img
-                        src={`/images/btn_sort_publish_${showCategory}_on.png`}
+                        src={`/images/btn_sort_publish_${showCategory.toLowerCase()}_on.png`}
                         alt={`# ${showKO}`}
                     />
                 </p>
@@ -42,7 +42,7 @@ const SiteSort = ({ sortList, acceptSort, toggle, setToggle }) => {
                                 <img
                                     src={`/images/btn_sort_publish_${
                                         sort.selected
-                                            ? `${sort.category}_on`
+                                            ? `${sort.category.toLowerCase()}_on`
                                             : sort.category
                                     }.png`}
                                     alt={sort.ko}
