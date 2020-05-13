@@ -73,7 +73,10 @@ const FrontWorks = () => {
                             en="Demostration"
                             ko="시연해보기"
                             clickEvent={() => {
-                                window.open("https://www.naver.com/", "_blank");
+                                window.open(
+                                    "https://ddock4you.github.io/youtube-music-player/",
+                                    "_blank"
+                                );
                             }}
                         />
                     </article>
