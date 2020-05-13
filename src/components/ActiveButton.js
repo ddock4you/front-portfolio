@@ -1,8 +1,8 @@
 import React from "react";
 
-const ActiveButton = ({ icon, ko, en }) => {
+const ActiveButton = ({ icon, ko, en, clickEvent }) => {
     return (
-        <button className="active-button" type="button">
+        <button className="active-button" type="button" onClick={clickEvent}>
             <img
                 className="active-button__icon"
                 src={`/images/icon_${icon}.png`}

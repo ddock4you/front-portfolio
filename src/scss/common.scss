@@ -1,15 +1,21 @@
 @import "_variable";
 @import "_mixin";
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 100px;
+    @include mediaQuery($tablet-l) {
+        scroll-padding: 60px;
+    }
+}
+
 body {
     background-color: $black;
 }
 
 .wrap {
-    &.active {
-        height: 100%;
-        overflow: hidden;
-    }
+    display: flex;
+    flex-direction: column;
 }
 
 .inner1720 {

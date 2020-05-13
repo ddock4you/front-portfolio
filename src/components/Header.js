@@ -23,13 +23,13 @@ const Header = ({ menu, setMenu }) => {
                         <h2 className="hide">navigation-center</h2>
                         <ul>
                             <li>
-                                <a href="#;">Front-end works</a>
+                                <a href="#front-works">Front-end works</a>
                             </li>
                             <li>
-                                <a href="#;">Publishing works</a>
+                                <a href="#publish-works">Publishing works</a>
                             </li>
                             <li>
-                                <a href="#;">Contact</a>
+                                <a href="#contact">Contact</a>
                             </li>
                         </ul>
                     </nav>

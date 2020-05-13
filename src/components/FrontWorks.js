@@ -18,7 +18,7 @@ const FrontWorks = () => {
     }, [windowWidth]);
 
     return (
-        <section className="front-works">
+        <section id="front-works" className="front-works">
             <h2 className="hide">Front-end</h2>
             <article className="front-works-top">
                 <h3 className="hide">front-end works image</h3>
@@ -75,6 +75,9 @@ const FrontWorks = () => {
                             icon="wheel"
                             en="Demostration"
                             ko="시연해보기"
+                            clickEvent={() => {
+                                window.open("https://www.naver.com/", "_blank");
+                            }}
                         />
                     </article>
                     <article className="front-content--right">

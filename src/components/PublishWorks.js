@@ -5,7 +5,7 @@ import SiteSort from "./SiteSort";
 
 const PublishWorks = () => {
     return (
-        <section className="publish-works">
+        <section id="publish-works" className="publish-works">
             <h2 className="hide">Publishing</h2>
             <section className="publish-content">
                 <div className="inner1300">
